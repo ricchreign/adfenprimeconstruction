@@ -270,3 +270,13 @@ export function getProducts(){
 export function getProfessions(){
     return professions;
 }
+
+
+export function getProductById(id){
+    return products.find((p) => p.id === Number(id));
+}
+
+
+export function getProfessionById(id){
+    return professions.find((p) => p.id === Number(id));
+}

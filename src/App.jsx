@@ -11,6 +11,7 @@ import Services from './assets/pages/Services'
 import Professional from './assets/pages/Professional'
 import Auth from './assets/pages/Auth'
 import AuthProvider from './context/AuthContext'
+import ProductDetails from './assets/pages/ProductDetails'
 
 
 function App() {
@@ -22,13 +23,14 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path ="/" element={<Home />}/>
-        <Route path ="/About" element={<About />}/>
-        <Route path ="/Auth" element={<Auth />}/>
-        <Route path ="/Contact" element={<Contact/>} />
-        <Route path ="/Material" element={< Material/>} />
-        <Route path ="/Professional" element={< Professional/>} />
-        <Route path ="/Project" element={<Project/>}/>
-        <Route path ="/Services" element={<Services/>} />
+        <Route path ="/about" element={<About />}/>
+        <Route path ="/auth" element={<Auth />}/>
+        <Route path ="/contact" element={<Contact/>} />
+        <Route path ="/material" element={< Material/>} />
+        <Route path ="/professional" element={< Professional/>} />
+        <Route path ="/project" element={<Project/>}/>
+        <Route path ="/services" element={<Services/>} />
+        <Route path="/products/:id" element={ <ProductDetails/> }/>
       </Routes>
     </div>
     </AuthProvider>
