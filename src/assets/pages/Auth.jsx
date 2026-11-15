@@ -11,7 +11,8 @@ export default function Auth(){
     const navigate = useNavigate()
 
 
-    function onSubmit(){
+    function onSubmit(data){
+        setError(null)
         let result;
         if (mode ==="signup"){
             result = signUp(data.email, data.password);
@@ -33,7 +34,9 @@ export default function Auth(){
             <div className="container">
                 <div className="auth-container">
 
-
+                    <h1 className="page-title">
+                        {mode === "signup" ? "Sign Up" : "Login"}
+                    </h1>
                     <form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
                         {error && <div className="error-message">{error}</div>}
                         <div className="form-group">
@@ -61,7 +64,7 @@ export default function Auth(){
                                 },
                             })}
                             className="form-input"
-                            type="password"
+                            type="password" placeholder="*********"
                             autoComplete="current-password" 
                             />
                             {errors.password && (

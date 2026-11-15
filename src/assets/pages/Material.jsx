@@ -1,118 +1,66 @@
-import ProductCard from "../component/productCard"
+import { useState } from "react";
+import ProductCard from "../component/productCard";
 import { getProducts } from "../Data/products";
-export default function Material(){
-    const products = getProducts();
-    return (
-        
-        <div className="material">
-            <div className="build">
-                <div className="link">
-                    <img src="" alt="" />
-                    <h5>ADFEN PRIME</h5>
-                </div>
+import CategoryList from "./CategoryList";
 
-                <div className="search1">
-                    <input
-                     type="text"
-                     placeholder="search materials"
-                     required
-                     />
-                </div>
+export default function Material() {
+  const products = getProducts();
+  const [searchTerm, setSearchTerm] = useState("");
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
 
-                <div className="qr">
-                    {/* <h5>Qr CODE</h5> */}
-                    <img src="" alt="img" />
-                </div>
-            </div>
-
-
-
-            <div className="cate">
-
-            <div className="categories">
-                <div className="category">
-                    <h6>Categories</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Cement</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Cement</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Cement</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Cement</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Cement</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Planks</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Pipe</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Granite</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Sand</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>POP Cement</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Block</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Roofing</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Tiles</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Steel</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Iron-Rod</h6>
-                </div>
-                <div className="category1">
-                    <img src="" alt="" />
-                    <h6>Paint</h6>
-                </div>
-            </div>
-
-
-
-            <div className="building-materials">
-                <div className="building1">
-                    <p>Building Materials <span>(124 products)</span></p>
-                </div>
-
-                <div className="building-tab">
-                    {products.map((product) =>(
-                        <ProductCard product={product} key={product.id}/>
-                    ))}     
-                </div>
-            </div>
+  return (
+    <div className="material">
+      <div className="build">
+        <div className="link">
+          <img src="" alt="" />
+          <h5>ADFEN PRIME</h5>
         </div>
+
+        <div className="search1">
+          <input
+            type="text"
+            placeholder="search materials..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
         </div>
-    )
+
+        <div className="qr">
+          {/* <h5>Qr CODE</h5> */}
+          <img src="" alt="img" />
+        </div>
+      </div>
+      <hr />
+
+      <div className="cate">
+        <CategoryList />
+
+        <div className="building-materials">
+          <div className="building1">
+            <p>
+              Building Materials{" "}
+              <span>({filteredProducts.length} products)</span>
+            </p>
+          </div>
+
+          <div className="building-tab">
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((product) => (
+                <ProductCard
+                  product={product}
+                  key={product.id}
+                  img
+                  src={product.image}
+                />
+              ))
+            ) : (
+              <p>No materials found.</p>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

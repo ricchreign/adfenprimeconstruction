@@ -8,8 +8,6 @@ export default function AuthProvider({children}){
         : null
     );
 
-
-
     function signUp(email, password){
         const users = JSON.parse(localStorage.getItem("users")  || "[]");
 
@@ -17,7 +15,9 @@ export default function AuthProvider({children}){
             return { success: false, error: "Email already exists"}
         }
 
-
+        const newUser = { email, password};
+        users.push(newUser);
+        localStorage.setItem("users", JSON.stringify(users));
         localStorage.setItem("currentUserEmail", email);
         setUser({ email});
 
@@ -55,7 +55,9 @@ export default function AuthProvider({children}){
 
 
 
-    return<AuthContext.Provider value={{signUp, user, login, logout}}>{children}</AuthContext.Provider>
+    return (
+    <AuthContext.Provider value={{ signUp, user, login,logout}}>{children}</AuthContext.Provider>
+    )
 }
 
 

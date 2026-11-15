@@ -1,9 +1,9 @@
-import ProductCard from "../component/productCard"
+
 import ProfessionCard from "../component/ProfessionalCard"
 import { getProducts } from "../Data/products"
 import { getProfessions } from "../Data/products"
 import { Link } from "react-router-dom"
-import Material from "./Material"
+
 
 export default function Home(){
     const products = getProducts();
@@ -21,7 +21,7 @@ export default function Home(){
                 <h4>
                     Buy building materials, find skilled labourers
                     and connect with trusted construction professionals
-                    all in one place.
+                    --all in one place.
                 </h4>
 
                 <div className="search">
@@ -34,9 +34,7 @@ export default function Home(){
                 </div>
             </div>
 
-            <div className="home-image">
-                <img src="" alt="home" />
-            </div>
+            
             </div>
 
             <div className="home-page2">
@@ -57,49 +55,49 @@ export default function Home(){
                     </Link> */}
                     <div className="object">
 
-                        <img src="/" alt="cement" />
+                        <img src="/image/photo_2026-10-28_02-44-22.jpg" alt="cement" />
                         <h6>Cement</h6>
-                        <p>#15,000 / bag</p>
+                        {/* <p>#15,000/ bag</p> */}
                         <Link to="/material">
                         <button to="/material">View Details</button>
                         </Link>
                     </div>
                     <div className="object">
-                        <img src="" alt="Blocks" />
+                        <img src="/image/block.jpg" alt="Blocks" />
                         <h6>Blocks</h6>
-                        <p>400 / piece</p>
+                        {/* <p>#400/ piece</p> */}
                         <Link to="/material">
                         <button to="/material">View Details</button>
                         </Link>
                     </div>
                     <div className="object">
-                        <img src="" alt="Iron Rod" />
+                        <img src="/image/iron rod.jpg" alt="Iron Rod" />
                         <h6>Iron Rod</h6>
-                        <p>#4500 / piece</p>
+                        {/* <p>#4500/ piece</p> */}
                         <Link to="/material">
                         <button to="/material">View Details</button>
                         </Link>
                     </div>
                     <div className="object">
-                        <img src="" alt="Sand" />
+                        <img src="/image/sand.jpg" alt="Sand" />
                         <h6>Sand</h6>
-                        <p>#20,000 / ton</p>
+                        {/* <p>#20,000/ ton</p> */}
                         <Link to="/material">
                         <button to="/material">View Details</button>
                         </Link>
                     </div>
                     <div className="object">
-                        <img src="" alt="Roofing" />
+                        <img src="/image/photo_2026-10-28_16-18-46.jpg" alt="Roofing" />
                         <h6>Roofing</h6>
-                        <p>#5,000 / sheet</p>
+                        {/* <p>#5,000/ sheet</p> */}
                         <Link to="/material">
                         <button to="/material">View Details</button>
                         </Link>
                     </div>
                     <div className="object">
-                        <img src="" alt="Paint" />
+                        <img src="/image/bp-removebg-preview.png" alt="Paint" />
                         <h6>Paint</h6>
-                        <p>#10,000 / bucket</p>
+                        {/* <p>#10,000/ bucket</p> */}
                         <Link to="/material">
                         <button to="/material">View Details</button>
                         </Link>
@@ -117,44 +115,44 @@ export default function Home(){
                 </div>
 
                 <div className="professionals">
-                    {professionals.map((profession) =>(
+                    {/* {professionals.map((profession) =>(
                         <ProfessionCard profession={profession} key={profession.id}/>
-                ))}
-                    {/* <div className="prof">
-                        <img src="" alt="prof" />
+                ))} */}
+                    <div className="prof">
+                        <img src="/image/photo_2026-10-29_17-32-42-removebg-preview.png" alt="jjj" />
                         <h5>Engr. Tunde</h5>
                         <h6>Civil Engineer</h6>
                         <h6>6+years</h6>
                         
                     </div>
                     <div className="prof">
-                        <img src="" alt="prof" />
+                        <img src="/image/photo_2026-10-29_17-32-42-removebg-preview.png" alt="jjj" />
                         <h5>QS. Seyi</h5>
                         <h6>Quantity Surveyor</h6>
                         <h6>5+years</h6>
                         
                     </div>
                     <div className="prof">
-                        <img src="" alt="prof" />
+                        <img src="/image/photo_2026-10-29_17-32-42-removebg-preview.png" alt="jjj" />
                         <h5>Architect. Fumbi</h5>
                         <h6>Architecture</h6>
                         <h6>8+years</h6>
                         
                     </div>
                     <div className="prof">
-                        <img src="" alt="prof" />
+                        <img src="/image/photo_2026-10-29_17-32-42-removebg-preview.png" alt="jjj" />
                         <h5>Builder. Pelumi</h5>
                         <h6>Builder</h6>
                         <h6>6+years</h6>
                         
                     </div>
                     <div className="prof">
-                        <img src="" alt="prof" />
+                        <img src="/image/photo_2026-10-29_17-32-42-removebg-preview.png" alt="jjj" />
                         <h5>Est. Yaya</h5>
                         <h6>Estate Management</h6>
                         <h6>6+years</h6>
                         
-                    </div> */}
+                    </div> 
                 </div>
             </div>
 
@@ -170,7 +168,7 @@ export default function Home(){
 
                 <div className="build-link">
                     <div className="build-link1">
-                        <img src="" alt="i" />
+                       <img src="/image/photo_2026-11-01_16-33-52-removebg-preview.png" alt="" />
                         <div className="link">
                             <h5>ADFEN</h5>
                             <p>Building Something</p>
@@ -205,6 +203,11 @@ export default function Home(){
                     
                 </div>
                 <hr />
+                <div className="p">
+
+                <p>@ 2027 ADFEN. All rights reserved</p>
+                </div>
+
             </div>
 
 
