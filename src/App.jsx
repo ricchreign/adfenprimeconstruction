@@ -14,7 +14,7 @@ import Auth from './assets/pages/Auth'
 import AuthProvider from './context/AuthContext'
 import ProductDetails from './assets/pages/ProductDetails'
 import CartProvider from './context/CartContext'
-import Checkout from './assets/pages/checkout'
+import Checkout from './assets/pages/Checkout'
 
 
 function App() {
